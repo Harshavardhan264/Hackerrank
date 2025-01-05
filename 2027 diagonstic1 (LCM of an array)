@@ -1,0 +1,16 @@
+def lcm(a, b):
+    larger = max(a, b)
+    while True:
+        if larger % a == 0 and larger % b == 0:
+            return larger
+        larger += 1
+def lcm_of_list(numbers):
+    result = numbers[0]
+    for num in numbers[1:]:
+        result = lcm(result, num)
+    return result
+n = int(input())
+numbers = list(map(int, input().split()))
+
+result = lcm_of_list(numbers)
+print(result)
